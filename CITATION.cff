@@ -1,0 +1,16 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: zeus-dual-arm
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Carl
+    family-names: Winge
+  - given-names: Karthik
+    family-names: Desingh
+repository-code: 'https://github.com/RPM-lab-UMN/zeus-dual-arm'
+license: MIT
