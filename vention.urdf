@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<robot name="vention">
+
+  <link name="world"/>
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="fixed_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+  </joint>
+
+  <link name="fixed_link">
+    <visual>
+      <geometry>
+        <mesh filename="vention_meshes/vention_fixed.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.337 0.529 0.757 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_pillar_joint" type="prismatic">
+    <parent link="fixed_link"/>
+    <child link="left_pillar_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1" upper="1" velocity="1"/>
+  </joint>
+
+  <link name="left_pillar_link">
+    <visual>
+      <geometry>
+        <mesh filename="vention_meshes/vention_pillar.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.337 0.529 0.757 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_pillar_joint" type="prismatic">
+    <parent link="fixed_link"/>
+    <child link="right_pillar_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1" upper="1" velocity="0.1"/>
+  </joint>
+
+  <link name="right_pillar_link">
+    <visual>
+      <geometry>
+        <mesh filename="vention_meshes/vention_pillar.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.337 0.529 0.757 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="h_cam_joint" type="prismatic">
+    <parent link="fixed_link"/>
+    <child link="invisible_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1" upper="1" velocity="0.1"/>
+  </joint>
+
+  <link name="invisible_link">
+    <!-- <visual>
+      <geometry>
+        <mesh filename="vention_meshes/vention_camera.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.337 0.529 0.757 1.0"/>
+      </material>
+    </visual> -->
+  </link>
+
+  <joint name="v_cam_joint" type="prismatic">
+    <parent link="invisible_link"/>
+    <child link="cam_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1" upper="1" velocity="0.1"/>
+  </joint>
+
+  <link name="cam_link">
+    <visual>
+      <geometry>
+        <mesh filename="vention_meshes/vention_camera.obj" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.337 0.529 0.757 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  </robot>
