@@ -2,9 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: >-
-  Zeus Dual-arm Manipulator Setup by Robotics: Perception
-  and Manipulation (RPM) Lab at the University of Minnesota
+title: Zeus Dual-arm Manipulator Setup
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
